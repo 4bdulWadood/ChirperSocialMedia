@@ -84,7 +84,7 @@ export default function Login(){
 
       <Popup
         trigger={<Button variant="contained" color="secondary">
-              Start Chirping!
+              Get Started!
               </Button>}
         modal
         closeOnDocumentClick

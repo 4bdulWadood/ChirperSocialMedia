@@ -7,7 +7,6 @@ const socket = require('socket.io')
 const User = require("./models/userModel");
 
 const app = express();
- //do this for every route in the server
 
  //set watch on collection
  const changeStream = User.watch();
@@ -16,17 +15,18 @@ app.use(express.json()); //JSON body parser read the JSON body data from express
 app.use(cors()); //activate cors
 app.use(express.static(path.join(__dirname, "./public/")));
 
-const PORT = process.env.PORT || 5000; //if the environment variable fdoesnt exist run on 5000; FOR HOSTING PURPOSSEs process.env.PORT is used
+const PORT = process.env.PORT || 5000; //if the environment variable doesnt exist run on 5000; FOR HOSTING PURPOSSEs process.env.PORT is used
 
 const server = app.listen(PORT, ()=>{
 
 });
 
 const io = socket(server)
-
+//Listen for changes only on the user who initiated the tweet.
 changeStream.on('change', async function(change) {
   if(change.operationType=="update"){
     io.to(socket.id).emit('refresh', await User.findById(change.documentKey._id))
+      return;
   }
 });
 
@@ -35,7 +35,7 @@ app.get('/test', (req,res)=>{
   path.join(__dirname, "./public/")
 })
 //Set up mongoose
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
+mongoose.connect("mongodb://dbUser:Coolio99@cluster0-shard-00-00.2obqy.mongodb.net:27017,cluster0-shard-00-01.2obqy.mongodb.net:27017,cluster0-shard-00-02.2obqy.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-19oraa-shard-0&authSource=admin&retryWrites=true&w=majority", { //Ideally this string would be an environment variable;
   useNewUrlParser: true, //to avoid warnings
   useUnifiedTopology: true,
   useCreateIndex:true

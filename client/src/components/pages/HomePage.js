@@ -89,12 +89,12 @@ useEffect(()=>{
     if(tokenRes.data){
       const user = await Axios.get("http://localhost:5000/users/", {headers: {"auth-token": token}});
       try{
-            setImg(getImage(user.data.displayName))
+          setImg(getImage(user.data.displayName))
       }
       catch(err){
 
       }
-      const messages = await Axios.get("http://localhost:5000/users/getMsgs", {headers: { "auth-token": token, "displayName": user.data.displayName }});
+     const messages = await Axios.get("http://localhost:5000/users/getMsgs", {headers: { "auth-token": token, "displayName": user.data.displayName }});
       setMessages(messages.data.messages);
 
       setfollowers()
@@ -118,12 +118,12 @@ const submitEdit = async(e)  => {
 }
 
 socket.on("refresh", async(data)=>{
-    console.log("refreshing")
     const user = UserData.user;
     //data = user that was updated; if user.displayName = data.displayName then update; if data.displayName is in user.following then update (serMsgs)
     if(data.displayName == user.displayName || following.includes(data.displayName)){
       setmessages()//to display changes in messages
     }
+    return;
   })
 
 
@@ -218,7 +218,7 @@ const logout = () => {
   const getDate = (val) => {
     const current = moment(val.split(" ")[val.split(" ").length-1], "MMMDoYYYY").fromNow()
     var x = current.replace(/(<[^>]*>)/g,'').split(' ')
-    if ( current == "an hour ago" || x[x.length-1]=="ago"&&x[x.length-2]==("hours") || x[x.length-1]=="ago"&&x[x.length-2]==("minutes")){
+    if ( current == "an hour ago" || x[x.length-1]=="ago"&&x[x.length-2]==("hours") || x[x.length-1]=="ago"&&x[x.length-2]==("minutes") || current == "a day ago"){
       return "today"
     }
     else{
@@ -257,7 +257,7 @@ return (
             )
         }
       </div>
-      <div className="name">{UserData.user.displayName}</div>
+      //<div className="name">{UserData.user.displayName}</div>
       {UserData.user.bio!=" "?(
         <div className="bio">{UserData.user.bio}</div>
       ):null}
@@ -394,7 +394,7 @@ return (
         <div style={{margin: "5% 0 0 15%"}} className="edit-profile-btn">
         </div>
         </form>
-        <div className="edit-profile-btn" style={{margin: "5% 0 0 -10%"}}> <Button variant="contained" color="secondary" onClick={(e)=>{submitEdit(e); logout();}}>
+        <div className="edit-profile-btn" style={{margin: "5% 0 0 -10%"}}> <Button variant="contained" color="secondary" onClick={(e)=>{submitEdit(e);}}>
           Submit Changes
         </Button>
         </div>

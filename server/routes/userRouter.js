@@ -7,12 +7,8 @@ const express = require('express');
 const multer = require('multer');
 const path = require("path");
 const moment = require("moment");
+require("dotenv").config();
 
-//join the connecting user to a new room socket.join(displayName) on logout socket.leave(displayName)
-//send back the users feed through room io.to(displayName).emit
-//socket leave on logout
-
-//Save user images' unique image_url
 
 router.post("/edits", auth, async(req,res)=>{
   try{
@@ -58,7 +54,6 @@ router.get("/getImage", async(req, res)=>{
 
 router.post("/register", async (req, res) => {
   //express.json() automatically parses the body
-  //async function for saving onto Mongo
   try{
   let {email, password, passwordCheck, displayName, bday} = req.body; //destructuring
 
@@ -124,7 +119,8 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({msg: "Invalid credentials!"});
     }
 
-    const token = jwt.sign({id: user._id}, process.env.JWT_SECRET); //stores logged in user
+    const token = jwt.sign({id: user._id}, "secret"); //Ideally the "secret" would be an environment variable
+
     res.json({ //respond with JSON
       token,
       user: {
@@ -155,6 +151,7 @@ router.post("/addMsg", auth, async(req, res) => { //need authentication for this
       const user = await User.findById(req.user);
       const message = m.concat(" ",user.displayName," ", moment().format("MMMDDYYYY"))
       const arr = user.followers;
+
       arr.forEach(async (item) => {
         const user1 = await User.findOne({displayName: item});
         user1.messages.unshift(message);
@@ -338,7 +335,7 @@ router.post("/tokenIsValid", async(req, res)=> {
     if(!token){
       return res.json(false);
     }
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const verified = jwt.verify(token, "secret"); //ideall the "secret" would be an environment variable
     if(!verified) return res.json(false);
     const user = await User.findById(verified.id);
     if(!user){
