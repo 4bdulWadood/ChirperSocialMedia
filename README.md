@@ -25,6 +25,12 @@ Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary
 * Add Bio ✔ 
 
 ## 💿 How to run locally
+1. "npm install" in client folder -> "npm start" to start client on localhost:3000
+2. "nodemon index.js" in server folder to start server locally. 
+### Additional Steps
+3. Simulate multiple users at the same time: 
+   * "npm start" on another command line window to start client on localhost:3001 and so on. 
+
 ## UI 
 
 ### Login/Register
