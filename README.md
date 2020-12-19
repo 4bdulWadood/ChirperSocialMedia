@@ -4,11 +4,26 @@ Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary
 [Demo](https://www.youtube.com/watch?v=rxy0JVqLVO0&feature=youtu.be)
 
 ## 🚀 Tech Stack
-* Bullet list
-asdasd
-* Bullet list
+* NodeJS
+* Express
+* Cloudinary
+* MongoDb
+* Mongoose
+* React
+* SocketIO
+* MaterialUI
+
 ## ⚠️ Prerequisite
+* node
+* npm
+
 ## 📜 Todo
+* likes
+* Retweets
+* Edit Profile ✔ 
+* Light theme/Dark theme
+* Add Bio ✔ 
+
 ## 💿 How to run locally
 ## UI 
 
