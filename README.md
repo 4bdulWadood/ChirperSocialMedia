@@ -42,5 +42,7 @@ Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary
 ![4](https://user-images.githubusercontent.com/57127141/102689093-8a552580-41c9-11eb-97df-7a89f8bd5cfa.JPG)
 ### Responsive Design
 ![bandicam 2020-12-19 07-17-48-563](https://user-images.githubusercontent.com/57127141/102689303-04d27500-41cb-11eb-9a51-5c0c62738611.gif)
+![bandicam 2020-12-19 07-17-30-951](https://user-images.githubusercontent.com/57127141/102689347-4f53f180-41cb-11eb-879a-20fd311034a2.gif)
+![bandicam 2020-12-19 07-16-42-987](https://user-images.githubusercontent.com/57127141/102689385-9a6e0480-41cb-11eb-812f-5ab45efaa66c.gif)
 
-  
+
