@@ -1,6 +1,6 @@
 ![bird](https://user-images.githubusercontent.com/57127141/102688594-bbcbf200-41c5-11eb-8e00-c5813dde5ee9.jpg)
 # Chirper
-Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary, and Socket.io.
+Full stack twitter clone made with the MERN stack.
 [Demo](https://www.youtube.com/watch?v=rxy0JVqLVO0&feature=youtu.be)
 
 ## 🚀 Tech Stack
