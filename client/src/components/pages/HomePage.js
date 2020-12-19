@@ -35,7 +35,7 @@ export default function HomePage(){
   const [UpdateUsername, setUpdateUsername] = useState("")
   const [UpdateEmail, setUpdateEmail] = useState("")
   const [Bio, setBio] = useState("")
-
+  const arr = []; //Append when you want to refresh page
   const NAME_OF_UPLOAD_PRESET = "jeienwmp";
   const YOUR_CLOUDINARY_ID = "dzblv4c9h";
 
@@ -94,9 +94,7 @@ useEffect(()=>{
       catch(err){
 
       }
-     const messages = await Axios.get("http://localhost:5000/users/getMsgs", {headers: { "auth-token": token, "displayName": user.data.displayName }});
-      setMessages(messages.data.messages);
-
+      setmessages()
       setfollowers()
       setfollowing()
     }
@@ -119,10 +117,10 @@ const submitEdit = async(e)  => {
 
 socket.on("refresh", async(data)=>{
     const user = UserData.user;
-    //data = user that was updated; if user.displayName = data.displayName then update; if data.displayName is in user.following then update (serMsgs)
-    if(data.displayName == user.displayName || following.includes(data.displayName)){
-      setmessages()//to display changes in messages
-    }
+      setTimeout(function(){
+          console.log("refresh detected")
+          setmessages()
+      }, 2000);
     return;
   })
 

@@ -22,12 +22,14 @@ const server = app.listen(PORT, ()=>{
 });
 
 const io = socket(server)
-//Listen for changes only on the user who initiated the tweet.
+
 changeStream.on('change', async function(change) {
   if(change.operationType=="update"){
     io.to(socket.id).emit('refresh', await User.findById(change.documentKey._id))
+    console.log("changes observed")
       return;
   }
+
 });
 
 
