@@ -29,7 +29,7 @@ Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary
 2. "nodemon index.js" in server folder on another command line window to start server locally. 
 ### Additional Steps
 3. Simulate multiple users at the same time: 
-   * "npm start" on another command line window to start client on http://localhost:3001/ and so on. 
+   * "npm start" on another command line window to start client on http://localhost:3001/ . 
 
 ## UI 
 ### Login/Register
