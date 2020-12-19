@@ -1,6 +1,7 @@
 # Chirper
-Full stack twitter clone made with ReactJS, Express, MongoDB and NodeJS, with socket.io integration.
+Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary, and Socket.io.
 
+# 🚀 Tech Stack
 To run: 
 1. Run "npm install" then "npm start" in the client folder 
 2. Run "npm install" then "nodemon index.js" in the server folder
