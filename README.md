@@ -13,7 +13,7 @@ Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary
 * SocketIO
 * MaterialUI
 
-## ⚠️ Prerequisite
+## ⚠️ Prerequisites
 * node
 * npm
 
@@ -41,5 +41,6 @@ Full stack twitter clone made with ReactJS, Express, MongoDB, NodeJS, Cloudinary
 ### Edit Profile
 ![4](https://user-images.githubusercontent.com/57127141/102689093-8a552580-41c9-11eb-97df-7a89f8bd5cfa.JPG)
 ### Responsive Design
+![4qz7zz](https://user-images.githubusercontent.com/57127141/102689269-ca68d800-41ca-11eb-98c0-2716951e0430.gif)
 
   
