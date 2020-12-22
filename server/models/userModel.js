@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({ //send the typical object framework here
+const userSchema = new mongoose.Schema({ 
   email: {type: String, required: true},
   password: {type: String, required: true, minlength: 5},
-  displayName: {type: String, required: true}, // Optional because required property doesnt exist
+  displayName: {type: String, required: true}, 
   bday: { type: String, required: true },
   image: { type: String, required: false },
   Bio: { type: String, required: false },
