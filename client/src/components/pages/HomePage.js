@@ -9,9 +9,7 @@ import moment from "moment"
 import io from 'socket.io-client'
 
 const socket = io.connect('http://localhost:5000')
-//Delete Account feature
-//Apply icons for home-explore section items
-//deploy to heroku
+
 export default function HomePage(){
   const history = useHistory();
   const {UserData, setUserData} = useContext(UserContext);
