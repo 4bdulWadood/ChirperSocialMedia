@@ -5,7 +5,7 @@ const auth = (req, res, next) => {
   if(!token){
     return res.status(401).json({msg: "No authentication token, atuhorization denied"});
   }
-const verified = jwt.verify(token, "secret"); //ideally "secret" would be an environmental variable scored locally
+const verified = jwt.verify(token, "secret"); //ideally "secret" would be an environmental variable stored locally
 if(!verified){
   return res.status(401).json({msg: "Token verification failed, authorization denied"});
 }
