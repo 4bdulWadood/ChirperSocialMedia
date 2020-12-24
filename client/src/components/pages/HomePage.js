@@ -233,7 +233,6 @@ const logout = () => {
     }
   }
 
-//image for user does exist in database then display Image
 return (
   <div className="home">
       <div className="home-rest">
