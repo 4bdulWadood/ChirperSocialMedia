@@ -12,6 +12,7 @@ Full stack twitter clone made with the MERN stack.
 * React
 * SocketIO
 * MaterialUI
+* BcryptJS
 
 ## ⚠️ Prerequisites
 * node
