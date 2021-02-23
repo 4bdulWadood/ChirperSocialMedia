@@ -18,6 +18,7 @@ Full stack twitter clone made with the MERN stack.
 ## ⚠️ Prerequisites
 * node
 * npm
+* nodemon
 
 ## 📜 Todo
 * likes
