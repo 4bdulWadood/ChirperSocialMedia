@@ -22,10 +22,9 @@ Full stack twitter clone made with the MERN stack.
 
 ## 📜 Todo
 * likes
-* Retweets
-* Edit Profile ✔ 
+* Retweets 
 * Light theme/Dark theme
-* Add Bio ✔ 
+
 
 ## 💿 How to run locally
 1. "npm install" in client folder -> "npm start" in client folder to start client on http://localhost:3000/
