@@ -6,7 +6,6 @@ Full stack twitter clone made with the MERN stack.
 ## 🚀 Tech Stack
 * NodeJS
 * Express
-* Cloudinary (to host profile images)
 * MongoDb
 * Mongoose
 * React
